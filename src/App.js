@@ -25,7 +25,7 @@ class App extends Component {
     console.log(this.state.todos)
     return (
       <div>
-        <Todos/>
+        <Todos todos={this.state.todos}/>
       </div>
     );
   }
