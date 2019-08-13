@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { whileStatement } from '@babel/types';
 // import PropTypes from 'prop-types';
-
 
 class Todoitem extends Component {
     getStyle = () => {

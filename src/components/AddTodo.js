@@ -9,8 +9,9 @@ class AddTodo extends Component {
         this.props.addTodo(this.state.title);
         this.setState({ title: '' });
     }
+
     onChange = (e) => this.setState({
-        title: e.target.name
+        [e.target.name]: e.target.value
     });
 
     render() {
