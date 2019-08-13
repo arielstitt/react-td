@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { whileStatement } from '@babel/types';
 // import PropTypes from 'prop-types';
 
 
@@ -22,11 +23,23 @@ class Todoitem extends Component {
                         type="checkbox"
                         onChange={this.props.markComplete.bind(this, id)}
                     /> {''}
-                    { title }
+                    {title}
+                    <button
+                        style={btnstyle}> x
+                    </button>
                 </p>
             </div>
         );
     }
+}
+const btnstyle = {
+    background: '#ff0000',
+    color: 'white',
+    border: 'none',
+    padding:'5px 10px',
+    borderRadius: '50%',
+    curser: 'pointer',
+    float: 'right'
 }
 // PropTypes
 // Todoitem.propTypes = {
