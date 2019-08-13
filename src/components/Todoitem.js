@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { NONAME } from 'dns';
 
 
 class Todoitem extends Component {
+    getStyle = () => {
+        if(this.props.todo.completed){
+            return{
+                textDecoration: 'line-through'
+            }
+        } else {
+            return {
+                textDecoration: 'none'
+            }
+        }
+    }
     render() {
         return (
-            <div>
+            <div style={this.getStyle()}>
                 <p>{ this.props.todo.title }</p>
             </div>
         );
@@ -15,5 +27,6 @@ class Todoitem extends Component {
 Todoitem.propTypes = {
     todos: PropTypes.object.isRequired
 }
+
 
 export default Todoitem;
