@@ -33,6 +33,13 @@ class App extends Component {
     })
   }
 
+  delTodo = (id) => {
+    //return the todos that do not match the id
+    this.setState({
+      todos: [...this.state.todos.filter(todo => todo.id!== id)]
+    })
+  }
+
   render() {
     console.log(this.state.todos)
     return (
@@ -40,6 +47,7 @@ class App extends Component {
         <Todos
           todos={this.state.todos}
           markComplete={this.markComplete}
+          delTodo={this.delTodo}
         />
       </div>
     );

@@ -25,7 +25,9 @@ class Todoitem extends Component {
                     /> {''}
                     {title}
                     <button
-                        style={btnstyle}> x
+                        style={btnstyle}
+                        onClick={this.props.delTodo.bind(this, id)}
+                    > x
                     </button>
                 </p>
             </div>
@@ -36,7 +38,7 @@ const btnstyle = {
     background: '#ff0000',
     color: 'white',
     border: 'none',
-    padding:'5px 10px',
+    padding: '5px 9px',
     borderRadius: '50%',
     curser: 'pointer',
     float: 'right'
