@@ -5,27 +5,19 @@ import Header from './components/layout/Header'
 import AddTodo from './components/AddTodo'
 import About from './components/pages/About'
 import uuid from 'uuid'
+import Axios from 'axios';
 
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: uuid.v4(),
-        title: "Take out the trash",
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: "Dinner with husband",
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: "Meeting with boss",
-        completed: false
-      }
-    ]
+    todos: []
+  } 
+
+  componentDidMount() {
+    Axios.get('http://jsonplaceholder.typicode.com/todos?_limit=10')
+    .then(res => this.setState({
+      todos: res.data
+    }))
   }
 
   markComplete = (id) => {
@@ -57,7 +49,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.todos)
     return (
       <Router>
         <div className='App'>
